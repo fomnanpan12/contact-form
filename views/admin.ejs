@@ -8,9 +8,25 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    <p>Admin panel</p>
-    <div class="container">
-        <% for (var i=0; i < messages.length;) %> 
-    </div>
+    <%- include ('./partials/nav.ejs') %>
+
+    <ul>
+
+        <% for( var i = 0; i < SavedUser.length; i++ ) { %>
+        <li>
+            <p style="font-size: 3rem;">name: <%= SavedUser[i].firstname %>  <%= SavedUser[i].lastname %></p>
+            <p> Email: <%= SavedUser[i].email %> </p>
+            <p> Tel: <%= SavedUser[i].tell %></p>
+            <p> Message: <%=SavedUser[i].message %></p>
+        </li>
+
+        <% } %>
+
+    </ul>
 </body>
 </html>
+<style>
+    li{
+        color: black;
+    }
+</style>
